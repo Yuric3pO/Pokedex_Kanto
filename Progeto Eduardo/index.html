@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSchool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <!--Logo -->
+            <a href="#" class="logo">
+                <i class="ph ph-terminal-window"></i> Pokedex
+            </a>
+            <!--Menu Principal-->
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#cursos" class="nav-link">Pokemons vistos</a></li>
+                    <li><a href="#cursos" class="nav-link">Pokemons capturados</a></li>
+                    <li><a href="#numeros" class="nav-link">Informações sobre o treinador</a></li>
+                    <li><a href="#noticias" class="nav-link">Ginasios derrotados</a></li>
+                    <li><a href="#eventos" class="nav-link">Eventos</a></li>
+                    <li><a href="#contato" class="nav-link">Contatos</a></li>
+                </ul>
+            </nav>
+            <!--Botões de ações-->
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Trocar Tema">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <a href="#contato" class="btn btn-primary d-none-mobile">Matricule-se</a>
+                <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir Menu">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <!--Banner Rotativo Hero-->
+        <section id="home" class="hero">
+            <div id="carousel" class="carousel">
+                <!--Slide 1-->
+                <div class="carousel-slide active">
+                    <img src="logos/wp8813120.jpg" alt="Programação"
+                     class="carousel-bg">
+                    <div class="carousel-content container">
+                        <h1>Sua jornada no mundo dos treinadores começa aqui</h1>
+                        <p>Começe sua jornada pokemon agora matricule-se e insira seus dados de treinador
+                        </p>
+                        <a href="#cursos" class="btn btn-primary">
+                            Matricule-se</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="logos/images.png" alt="Equipe"
+                     class="carousel-bg">
+                    <div class="carousel-content container">
+                        <h1>Olhe os melhores lugares de Kanto</h1>
+                        <p>Melhores lugares para treinar e capturar pokemons
+                        </p>
+                        <a href="#contato" class="btn btn-primary">
+                            Veja o mapa</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="logos/images.png" alt="Equipe"
+                     class="carousel-bg">
+                    <div class="carousel-content container">
+                        <h1>Teste</h1>
+                        <p>Teste seus pokemons em batalha contra outro treinadores
+                        </p>
+                        <a href="#contato" class="btn btn-primary">
+                            Agende uma batalha</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control prev" id="btn-prev">
+                <i class="ph ph-caret-left"></i>
+            </button>
+            <button class="carousel-control next" id="btn-next">
+                <i class="ph ph-caret-right"></i>
+            </button>
+        </section>
+        <section id="contatos" class="section bg-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Informações de Contatos</h2>
+                    <div class="line"></div>
+                    <p>Cartões para ver informações sobre o mundo pokemon.</p>
+                </div>
+                <div class="grid grid-cards">
+                    <article class="card">
+                        <div class="card-icon-wrapper">
+                            <i class="ph ph-laptop"></i>
+                        </div>
+                        <h3>Pokemon vistos</h3>
+                        <p>Veja todos os pokemon que você viu durante toda a sua jornada.js</p>
+                        <a href="#" class="btn btn-outline">Detalhes</a>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon-wrapper">
+                        <i class="ph ph-laptop"></i>
+                        </div>
+                        <h3>Pokemon Capturados</h3>
+                        <p>Veja todos os pokemon que você capturou durante toda a sua jornada.js</p>
+                        <a href="#" class="btn btn-outline">Detalhes</a>
+                    </article>
+                        <article class="card">
+                        <div class="card-icon-wrapper">
+                        <i class="ph ph-laptop"></i>
+                        </div>
+                        <h3>Ginasios vencidos</h3>
+                        <p>Todos os Ginasios que você ja derrotou.js</p>
+                        <a href="#" class="btn btn-outline">Detalhes</a>
+                    </article>
+                        <article class="card">
+                        <div class="card-icon-wrapper">
+                        <i class="ph ph-laptop"></i>
+                        </div>
+                        <h3>Ginasios que faltam derrotar</h3>
+                        <p>Todos os Ginasios que você ainda não derrotou.js</p>
+                        <a href="#" class="btn btn-outline">Detalhes</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="numeros" class="section stats-section">
+            <div class="container">
+                <div class="section-title title-light">
+                <h2>Impacto dos seus pokemon no ecosistema de Kanto</h2>
+                <div class="line"></div>
+            </div>
+            <div class="grid grid-stats">
+                <div class="stat-box">
+                    <i class="ph ph-student"></i>
+                    <span class="stat-num" data-target="151">0</span>
+                    <p>Pokemon Vistos</p>
+                </div>
+                <div class="stat-box">
+                    <i class="ph ph-student"></i>
+                    <span class="stat-num" data-target="12">0</span>
+                    <p>Pokemon Capturados</p>
+                </div>
+                <div class="stat-box">
+                    <i class="ph ph-student"></i>
+                    <span class="stat-num" data-target="8">0</span>
+                    <p>Ginasios derrotados</p>
+                </div>
+        </div>
+        </section>
+        <section id="noticias-eventos" class="section">
+            <div class="container grid dual-layout">
+                <div class="news-container" id="noticias">
+                    <h3 class="box-title">Recentes em Kanto</h3>
+                    <article class="news-item">
+                        <img src="logos/rocket.jpg" alt="Equipe Rocket" class="news-img">
+                    <div class class="new-text">
+                        <h4>A Equipe Rocket e seu lider toman a cidade de Saffron.</h4>
+                        <span class="news-date">25 de Agosto de 1990 no ano de Arceus</span>
+                        <p>A Equipe Rocket e seu lider toman a cidade de Saffron, e a pessoa que poderia impedir não faz nada. Onde está a lider de ginasio que cuida da cidade?</p>
+                    </div>
+                </article>
+                <article class="news-item">
+                        <img src="logos/casino.webp" alt="Casino clandestino" class="news-img">
+                    <div class class="new-text">
+                        <h4>Casino clandestino é descoberto.</h4>
+                        <span class="news-date">30 de Agosto de 1990 no ano de Arceus</span>
+                        <p>Um casino ilegal é descoberto na cidade de Celadon pertecente a Equipe Rocket</p>
+                    </div>
+                </article>
+                </div>
+            <div class="events-container" id="eventos">
+                <h3 class="box-title">Próximos Eventos</h3>
+                <div class="event-item">
+                    <div class="event-calendar">
+                        <span class="day">5</span>
+                        <span class="month">SET</span>
+                    </div>
+                <div class="event-tect">
+                    <h4>Tomar chá com Mr.Fuji</h4>
+                    <span class="event-meta">
+                        <i class="ph ph-map-pin"></i> Lavander Town
+                        <i class="ph ph-clock"></i>15h
+                    </span>
+                </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-calendar">
+                        <span class="day">20</span>
+                        <span class="month">SET</span>
+                    </div>
+                <div class="event-tect">
+                    <h4>Batalha de Ginasio com o lider do 5° ginasio</h4>
+                    <span class="event-meta">
+                        <i class="ph ph-map-pin"></i> Fuchsia Town
+                        <i class="ph ph-clock"></i>12:30
+                    </span>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section bg-alt" id="contato">
+            <div class="container grid contact-layout">
+                <div class="contact-info">
+                    <h2>Pronto para começar sua jornada em kanto?</h2>
+                    <p>Nossos pesquisadores estão prontos para te dar uma nova missão</p>
+                    <ul class="contact-list">
+                        <li><i class="ph ph--evelope-simple"></i>
+                        professor@carvalho.poke.com
+                        </li>
+                        <li><i class="ph ph-phone"></i>
+                        56 (47) 9128374
+                        </li>
+                        <li><i class="ph ph-buildings"></i>
+                        Rua a esquerda mais em baixo - Pallet/Kanto
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="return false;">
+                        <div class="input-group">
+                            <label for="nome">Como devemos te chamar?</label>
+                            <input type="text" id="nome" placeholder="Seu nome completo">
+                        </div>
+                        <div class="input-group">
+                            <label for="numero de treinador">numero de treinador para atualização de dados</label>
+                            <input type="numero de treinador" id="numero de treinador" placeholder="numero de treinador">
+                        </div>
+                        <div class="input-group">
+                            <label for="msg">mensagem</label>
+                            <textarea id="msg" rows="4" placeholder="Digite sua mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="conteiner grid footer-grid">
+            <div class="brand-col">
+                <a href="#" class="logo text-light">
+                    <i class="ph ph-terminal-window"></i> Pokedex
+                </a>
+                <p>Melhor site de informações da sua região favorita de todo o mundo pokemon</p>
+            </div>
+            <div class="link-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#pokemons visto">pokemons vistos</a></li>
+                    <li><a href="#pokemons capturados">Pokemons capturados</a></li>
+                    <li><a href="#ginasios derrotados">Ginasios derrotados</a></li>
+                </ul>
+            </div>
+            <div class="link-col">
+                <h4>Comunidade</h4>
+                <ul>
+                    <li><a href="noticias">informações e noticias</a></li>
+                    <li><a href="eventos">Agenda e Eventos</a></li>
+                    <li><a href="contato">Fale com os cientistas</a></li>
+                </ul>
+            </div>
+            <div class="social-col">
+                <h4>Acompanhe</h4>
+                <div class="social-links">
+                    <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph ph-github-logo"></i></a>
+                    <a href="#"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="#"><i class="ph ph-youtube-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 1990 Pokedex. Todos os direitos reservados. Desenvolvedor: Yuri Carvalho do Prado</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

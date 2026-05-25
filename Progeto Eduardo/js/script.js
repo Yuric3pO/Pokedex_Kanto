@@ -1,0 +1,118 @@
+document.addEventListener('DOMContentLoaded', () =>{
+    const navMenu = document.getElementById('nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const menuBtn = document.getElementById('menu-btn');
+    const menuIcon = menuBtn.querySelector('i');
+
+    menuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        if (navMenu.classList.contains('active')){
+            menuIcon.classList.replace('ph-list', 'ph-x');
+        }
+        else{
+            menuIcon.classList.replace('ph-x', 'ph-list');
+        }
+    })
+
+    const slides = document.querySelectorAll('.carousel-slide');
+    const btnNext = document.getElementById('btn-next');
+    const btnPrev = document.getElementById('btn-prev');
+
+    let currentSlide = 0;
+    let autoPlaytimer;''
+
+    function showTargetSlide(index){
+        slides.forEach(slide => slide.classList.remove('active'));
+
+        if(index >= slides.length){
+            currentSlide = 0;
+        }
+        else if(index<0){
+            currentSlide = slides.length-1;
+        }
+        else{
+            currentSlide = index;
+        }
+
+        slides[currentSlide].classList.add('active');
+    }
+
+    function runAutoPlay(){
+        autoPlaytimer = setInterval(()=>{
+            showTargetSlide(currentSlide+1);
+        }, 6000);
+    }
+
+    btnNext.addEventListener('click',()=>{
+        showTargetSlide(currentSlide+1);
+        clearInterval(autoPlaytimer);
+        resetAutoPlay();
+    })
+
+    function resetAutoPlay(){
+        clearInterval(autoPlaytimer);
+        resetAutoPlay();
+    }
+
+    btnPrev.addEventListener('click',()=>{
+        showTargetSlide(currentSlide-1);
+        clearInterval(autoPlaytimer);
+        resetAutoPlay();
+    })
+
+    runAutoPlay();
+
+    const counters = document.querySelectorAll('.stat-num');
+
+    function runCounterAnimation(el){
+        const targetNumber = parseInt(el.getAttribute('data-target'));
+        const durationLimit = 2000;
+        let counterValue = 0;
+        const incrementAmount = targetNumber / (durationLimit / 20);
+        const updateVisualTimer = setInterval(() => {
+            counterValue += incrementAmount;
+            if(counterValue >= targetNumber){
+                el.innerText = targetNumber;
+                clearInterval(updateVisualTimer);
+            }
+            else{
+                el.innerText = Math.ceil(counterValue);
+            }
+        },20 );
+    }
+
+    const scrollObserver = new IntersectionObserver((entries, observerInstance) =>{
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                runCounterAnimation(entry.target);
+                observerInstance.unobserve(entry.target);
+            } 
+        });
+    },{
+        threshold: 0.6
+    });
+    counters.forEach(countersItem =>{
+        scrollObserver.observe(countersItem);
+    });
+
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeBtn.querySelector('i');
+    const currentTheme = localStorage.getItem('theme');
+    if(currentTheme === 'dark'){
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.replace('ph-moon', 'ph-sun');
+    }
+    themeBtn.addEventListener('click', ()=>{
+        document.body.classList.toggle('dark-mode');
+
+        const isDark = document.body.classList.contains('dark-mode');
+        if (isDark){
+            themeIcon.classList.replace('ph-moon', 'ph-sun');
+            localStorage.setItem('theme', 'dark');
+        }else{
+            themeIcon.classList.replace('ph-sun','ph-moon');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+});
